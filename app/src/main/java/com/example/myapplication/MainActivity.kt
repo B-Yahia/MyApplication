@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -25,7 +26,10 @@ class MainActivity : AppCompatActivity() {
         var division = findViewById<View>(R.id.divBtn)as Button
         var power = findViewById<View>(R.id.powerBtn)as Button
 
-
+        btn.setOnClickListener {
+            val intent = Intent ( this, NewActivity::class.java)
+            startActivity(intent)
+        }
         addition.setOnClickListener (View.OnClickListener {
             rslt.text= (firstNum.text.toString().toInt()+SecondNum.text.toString().toInt()).toString()
             Toast.makeText( this,rslt.text,Toast.LENGTH_LONG).show()
